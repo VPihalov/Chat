@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach NestJS WS",
+            // "skipFiles": [
+            //     "<node_internals>/**"
+            // ],
+            "port": 9229,
+            "restart": true,
+            "stopOnEntry": false,
+            "protocol": "inspector",
+            // "program": "${file}",
+            // "preLaunchTask": "tsc: build - tsconfig.json",
+            // "outFiles": [
+            //     "${workspaceFolder}/dist/**/*.js"
+            // ]
+        }
+    ]
+}
