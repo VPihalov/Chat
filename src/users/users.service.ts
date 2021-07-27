@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable, Logger, NotFoundException } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { User } from './entities/user.entity';
@@ -8,6 +8,7 @@ import { IUsersService } from './interfaces/IUsersService';
 @Injectable()
 export class UsersService implements IUsersService {
   private users: User[] = [];
+  private readonly logger = new Logger(UsersService.name)
 
   async create(createUserDto: CreateUserDto) {
     
@@ -29,6 +30,7 @@ export class UsersService implements IUsersService {
     const user =  this.users.find(user => user.id === id);
 
     if (!user) {
+      this.logger.warn(`User with id ${id} doesn't exist`)
       throw new NotFoundException(`User with id ${id} doesn't exist`)
     }
 
