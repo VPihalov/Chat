@@ -1,0 +1,226 @@
+// MongoDB Playground
+// To disable this template go to Settings | MongoDB | Use Default Template For Playground.
+// Make sure you are connected to enable completions and to be able to run a playground.
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+// Select the database to use.
+use('mydb');
+
+db.users.drop()
+
+db.users.insertMany([
+  {
+    "_id": "6109ba4978599e943a792fe7",
+    "isActive": true,
+    "picture": "http://placehold.it/32x32",
+    "age": 38,
+    "eyeColor": "brown",
+    "name": "Dianna Bass",
+    "gender": "female",
+    "company": "GEEKETRON",
+    "email": "diannabass@geeketron.com",
+    "phone": "+1 (960) 408-2226",
+    "address": "338 Lorraine Street, Maxville, Alaska, 1965",
+    "registered": "2020-11-29T09:19:47 -02:00",
+    "tags": [
+      "commodo",
+      "in",
+      "consectetur",
+      "reprehenderit",
+      "ad",
+      "ea",
+      "nulla"
+    ]
+  },
+  {
+    "_id": "6109ba49a06babccabbbc857",
+    "isActive": true,
+    "picture": "http://placehold.it/32x32",
+    "age": 29,
+    "eyeColor": "brown",
+    "name": "Perez Miranda",
+    "gender": "male",
+    "company": "REVERSUS",
+    "email": "perezmiranda@reversus.com",
+    "phone": "+1 (817) 427-2363",
+    "address": "454 Whitwell Place, Berwind, Virginia, 1506",
+    "registered": "2018-12-18T11:28:12 -02:00",
+    "tags": [
+      "sit",
+      "eiusmod",
+      "excepteur",
+      "labore",
+      "nisi",
+      "voluptate",
+      "aliqua"
+    ]
+  },
+  {
+    "_id": "6109ba49ebe0928ee31bbaab",
+    "isActive": true,
+    "picture": "http://placehold.it/32x32",
+    "age": 33,
+    "eyeColor": "blue",
+    "name": "Marlene Sharp",
+    "gender": "female",
+    "company": "ISOPOP",
+    "email": "marlenesharp@isopop.com",
+    "phone": "+1 (898) 537-2392",
+    "address": "554 Dahlgreen Place, Flintville, Connecticut, 6031",
+    "registered": "2015-04-17T09:01:03 -03:00",
+    "tags": [
+      "est",
+      "eiusmod",
+      "elit",
+      "aliquip",
+      "cillum",
+      "ut",
+      "do"
+    ]
+  },
+  {
+    "_id": "6109ba4963b0854d02466d7e",
+    "isActive": false,
+    "picture": "http://placehold.it/32x32",
+    "age": 22,
+    "eyeColor": "green",
+    "name": "Katy Valencia",
+    "gender": "female",
+    "company": "COMTENT",
+    "email": "katyvalencia@comtent.com",
+    "phone": "+1 (876) 477-2459",
+    "address": "788 Sumner Place, Roulette, Kansas, 6864",
+    "registered": "2015-10-01T12:28:51 -03:00",
+    "tags": [
+      "eiusmod",
+      "Lorem",
+      "commodo",
+      "ut",
+      "amet",
+      "irure",
+      "adipisicing"
+    ]
+  },
+  {
+    "_id": "6109ba4915a28d36d5b0f6c1",
+    "isActive": true,
+    "picture": "http://placehold.it/32x32",
+    "age": 38,
+    "eyeColor": "brown",
+    "name": "Kirkland Moody",
+    "gender": "male",
+    "company": "EARTHMARK",
+    "email": "kirklandmoody@earthmark.com",
+    "phone": "+1 (856) 544-2636",
+    "address": "178 McKibbin Street, Gordon, Alabama, 4651",
+    "registered": "2018-08-22T08:32:03 -03:00",
+    "tags": [
+      "eiusmod",
+      "quis",
+      "ipsum",
+      "pariatur",
+      "laborum",
+      "dolore",
+      "ex"
+    ]
+  },
+  {
+    "_id": "6109ba49b04a27bedc45b9e8",
+    "isActive": true,
+    "picture": "http://placehold.it/32x32",
+    "age": 29,
+    "eyeColor": "blue",
+    "name": "Marissa Howard",
+    "gender": "female",
+    "company": "COLUMELLA",
+    "email": "marissahoward@columella.com",
+    "phone": "+1 (994) 535-2866",
+    "address": "603 Bay Street, Spelter, Mississippi, 2799",
+    "registered": "2020-07-09T07:49:30 -03:00",
+    "tags": [
+      "mollit",
+      "nostrud",
+      "ex",
+      "dolore",
+      "Lorem",
+      "minim",
+      "nulla"
+    ]
+  },
+  {
+    "_id": "6109ba4932755f5aa55a76d8",
+    "isActive": false,
+    "picture": "http://placehold.it/32x32",
+    "age": 22,
+    "eyeColor": "green",
+    "name": "Wiggins Stevenson",
+    "gender": "male",
+    "company": "ECOSYS",
+    "email": "wigginsstevenson@ecosys.com",
+    "phone": "+1 (869) 427-2352",
+    "address": "940 Bond Street, Bendon, Florida, 2390",
+    "registered": "2018-02-25T09:40:56 -02:00",
+    "tags": [
+      "ullamco",
+      "reprehenderit",
+      "nostrud",
+      "eu",
+      "sunt",
+      "dolor",
+      "qui"
+    ]
+  },
+  {
+    "_id": "6109ba4961830bbc70efddee",
+    "isActive": true,
+    "picture": "http://placehold.it/32x32",
+    "age": 34,
+    "eyeColor": "blue",
+    "name": "Vicky Workman",
+    "gender": "female",
+    "company": "KNEEDLES",
+    "email": "vickyworkman@kneedles.com",
+    "phone": "+1 (848) 569-3089",
+    "address": "180 Jay Street, Craig, Texas, 3723",
+    "registered": "2016-12-04T10:50:09 -02:00",
+    "tags": [
+      "dolor",
+      "amet",
+      "ipsum",
+      "dolore",
+      "pariatur",
+      "sint",
+      "eiusmod"
+    ]
+  }
+])
+
+//  db.users.find()
+
+
+//Find users with balance greater than 2000
+// db.users.find({
+//     balance: {$gt: 2000}
+// }, {balance: 1}).limit(3)
+
+
+// //Calculate total balance for all males and all females
+// db.users.aggregate([
+//     {
+//         $match: {isActive: true}
+//     },
+//     {
+//         $group: {
+//             _id: "$gender",
+//             total: {$sum: "$balance"}
+//         }
+//     }
+// ])
+
+
+//Create new collections by eye color
+db.fate.insertMany([
+    {eyeColor: "blue", fate: "is happy"},
+    {eyeColor: "brown", fate: "will win a million"},
+    {eyeColor: "green", fate: "likes cat"},
+])
