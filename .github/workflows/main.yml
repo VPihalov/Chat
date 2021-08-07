@@ -33,7 +33,11 @@ jobs:
     # Install deps with yarn    
     - name: Install dependecies
       run: yarn
+<<<<<<< HEAD
       working-directory: ./user-service  
+=======
+      working-directory: ../../user-service  
+>>>>>>> 0de1aba52e8a96f2ec9eaef1e53c7a53b864e04f
 
     # Run linter checks  
     - name: Run TS lint
@@ -66,8 +70,7 @@ jobs:
           docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_PASSWORD }}
 
       - name: Build the Docker image
-        run: docker build ./user-service --file ./user-service/Dockerfile --tag valeriydockerid/img-user-service:latest
+        run: docker build ./user-service --file ./user-service/Dockerfile --tag valeriy/img-user-service:latest
 
       - name: Docker Push
-        run: docker push valeriydockerid/img-user-service
-
+        run: docker push valeriy_img_user_service  
