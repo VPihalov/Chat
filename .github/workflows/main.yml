@@ -70,7 +70,7 @@ jobs:
           docker login -u ${{ secrets.DOCKER_HUB_USERNAME }} -p ${{ secrets.DOCKER_HUB_PASSWORD }}
 
       - name: Build the Docker image
-        run: docker build ./user-service --file ./user-service/Dockerfile --tag valeriy/img-user-service:latest
+        run: docker build ./user-service --file ./user-service/Dockerfile --tag valeriydockerid/img-user-service:latest
 
       - name: Docker Push
-        run: docker push valeriy_img_user_service  
+        run: docker push valeriydockerid/img-user-service  
