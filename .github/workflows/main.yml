@@ -69,4 +69,4 @@ jobs:
         run: docker build ./user-service --file ./user-service/Dockerfile --tag valeriy/img-user-service:latest
 
       - name: Docker Push
-        run: docker push valeriy_img_user_service  
+        run: docker push valeriy/img-user-service:latest  
