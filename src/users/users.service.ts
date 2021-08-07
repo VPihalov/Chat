@@ -24,7 +24,7 @@ export class UsersService implements IUsersService {
   }
 
   async findAll() {
-    return  this.userModel.find();
+    return this.userModel.find();
   }
 
   async findOne(id: string) {
