@@ -33,7 +33,7 @@ jobs:
     # Install deps with yarn    
     - name: Install dependecies
       run: yarn
-      working-directory: ../../user-service  
+      working-directory: ./user-service  
 
     # Run linter checks  
     - name: Run TS lint
