@@ -1,23 +1,45 @@
-import { Controller, Get, Post, Body, Put, Param, Delete, Inject, Logger } from '@nestjs/common';
+import { 
+  Controller,
+  Get,
+  Post, 
+  Body, 
+  Put, 
+  Param, 
+  Delete, 
+  Inject, 
+  Logger, 
+  UseInterceptors, 
+  CacheInterceptor, 
+  CacheTTL, 
+  CACHE_MANAGER
+} from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { IUsersService } from './interfaces/IUsersService';
+import { Cache } from 'cache-manager'
 
 @Controller('users')
 export class UsersController {
 
   private readonly logger = new Logger(UsersController.name)
 
-  constructor(@Inject('IUSersService') private readonly usersService: IUsersService) {}
+  constructor(
+    @Inject('IUSersService') private readonly usersService: IUsersService,
+    @Inject(CACHE_MANAGER) private cacheManager: Cache
+  ) {}
   
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
-    this.logger.log('Someone is creating new user' + JSON.stringify(createUserDto))
+    this.logger.log('Someone is creating new user' + JSON.stringify(createUserDto));
+    this.cacheManager.reset();
     return this.usersService.create(createUserDto)
   }
 
   @Get()
-  findAll() {
+  @UseInterceptors(CacheInterceptor)
+  @CacheTTL(10)
+  async findAll() {
+    await new Promise(r => setTimeout(r, 7000))
     return this.usersService.findAll();
   }
 
