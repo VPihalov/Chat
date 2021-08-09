@@ -17,6 +17,7 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { IUsersService } from './interfaces/IUsersService';
 import { Cache } from 'cache-manager'
+import { RedisAdapter } from 'src/cache/RedisAdapter';
 
 @Controller('users')
 export class UsersController {
@@ -25,8 +26,12 @@ export class UsersController {
 
   constructor(
     @Inject('IUSersService') private readonly usersService: IUsersService,
-    @Inject(CACHE_MANAGER) private cacheManager: Cache
-  ) {}
+    @Inject(CACHE_MANAGER) private cacheManager: Cache,
+    redisAdapter: RedisAdapter,
+  ) {
+    // This is just for example how to set list with redis
+    redisAdapter.getClient().lpush('mylist', 'a', 'b', 'c')  //now we have access to all methods to work with redis store
+  }
   
   @Post()
   create(@Body() createUserDto: CreateUserDto) {

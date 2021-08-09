@@ -5,6 +5,7 @@ import { UsersController } from './users.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UserSchema, User } from './schemas/user.schema';
 import * as redis from 'cache-manager-ioredis';
+import { RedisAdapter } from 'src/cache/RedisAdapter';
 
 @Module({
   imports: [
@@ -17,10 +18,13 @@ import * as redis from 'cache-manager-ioredis';
     }),
   ],
   controllers: [UsersController],
-  providers: [{
+  providers: [
+    RedisAdapter,
+    {
     provide: 'IUSersService',
     useClass: UsersService,
-  }]
+    }
+]
 })
 
 export class UsersModule {}
