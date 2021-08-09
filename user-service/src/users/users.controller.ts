@@ -18,6 +18,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { IUsersService } from './interfaces/IUsersService';
 import { Cache } from 'cache-manager'
 import { RedisAdapter } from 'src/cache/RedisAdapter';
+import { ClearCacheInterceptor } from 'src/cache/ClearCacheInterceptor';
 
 @Controller('users')
 export class UsersController {
@@ -34,9 +35,10 @@ export class UsersController {
   }
   
   @Post()
+  @UseInterceptors(ClearCacheInterceptor)
   create(@Body() createUserDto: CreateUserDto) {
     this.logger.log('Someone is creating new user' + JSON.stringify(createUserDto));
-    this.cacheManager.reset();
+    // this.cacheManager.reset();
     return this.usersService.create(createUserDto)
   }
 
