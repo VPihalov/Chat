@@ -1,6 +1,6 @@
 import { CACHE_MANAGER, Inject, Injectable } from "@nestjs/common";
 import { Cache, Store } from "cache-manager";
-import { Redis } from "cache-manager-ioredis";
+import Redis from "ioredis";
 
 interface RedisStore extends Store {
   getClient(): Redis.Commands;

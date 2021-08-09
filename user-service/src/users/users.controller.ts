@@ -17,8 +17,8 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { IUsersService } from './interfaces/IUsersService';
 import { Cache } from 'cache-manager'
-import { RedisAdapter } from 'src/cache/RedisAdapter';
-import { ClearCacheInterceptor } from 'src/cache/ClearCacheInterceptor';
+import { RedisAdapter } from '../cache/RedisAdapter';
+import { ClearCacheInterceptor } from '../cache/ClearCacheInterceptor';
 
 @Controller('users')
 export class UsersController {
