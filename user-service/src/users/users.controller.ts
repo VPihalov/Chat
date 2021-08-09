@@ -43,7 +43,6 @@ export class UsersController {
   }
 
   @Get()
-  @UseInterceptors(CacheInterceptor)
   @CacheTTL(10)
   async findAll() {
     await new Promise(r => setTimeout(r, 7000))
