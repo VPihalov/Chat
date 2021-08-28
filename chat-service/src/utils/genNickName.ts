@@ -1,6 +1,7 @@
 const capitalize = require('lodash/capitalize');
-
-
+/**
+ * this file is just for fun, to generate random nckname while we don't have Auth system
+ */
 const intesifiers = [
   'absolutely',
   'quite',
