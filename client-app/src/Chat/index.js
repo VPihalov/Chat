@@ -86,7 +86,8 @@ const Chat = () => {
 	const [meta, setMeta] = useState({});
 
 	useEffect(() => {
-		fetch(`${config.host}/meta`)
+		console.log(`${config.host}/meta`)
+		fetch(`${config.host}/meta`, {mode: 'cors', headers: new Headers({'Access-Control-Allow-Origin': "*"})})
 			.then(resp => resp.json())
 			.then(resp => setMeta(resp))
 			.catch(console.error);
